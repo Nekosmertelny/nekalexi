@@ -1,0 +1,14 @@
+services:
+  nekalexi:
+    build:
+      context: ..
+      dockerfile: fastapi_backend/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - DATABASE_PATH=/app/data/lexiforge.db
+    volumes:
+      - ../data:/app/data
+    restart: unless-stopped

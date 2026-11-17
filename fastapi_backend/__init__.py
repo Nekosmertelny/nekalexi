@@ -1,0 +1,1 @@
+# nekaLexi Python FastAPI package

@@ -1,0 +1,6 @@
+{
+  "name": "LexiForge",
+  "description": "Платформа для изучения английской лексики с интервальным повторением SM-2, ИИ-проверкой предложений, аналитикой, WebSocket-уведомлениями и геймификацией.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

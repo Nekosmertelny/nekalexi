@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-mono, code, pre, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+/* Subtle decorative architectural dot grid */
+.bg-editorial-dots {
+  background-image: radial-gradient(rgba(14, 165, 233, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.dark .bg-editorial-dots {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Smooth ambient breath for active focus elements */
+@keyframes ambient-breath {
+  0%, 100% {
+    transform: scale(0.98);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.78;
+  }
+}
+
+.animate-ambient-breath {
+  animation: ambient-breath 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 3D Flashcard flip helpers */
+.perspective-1000 {
+  perspective: 1400px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.ease-spring-card {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-transform,
+  .transition-all,
+  .animate-ambient-breath {
+    transition-duration: 0.01ms !important;
+    animation: none !important;
+  }
+}
